@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :promotions, only: [:new, :edit]
+  
   def index
     @products = Product.all 
   end
@@ -9,6 +11,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @promotion = @product.promotion
   end
 
   def create
@@ -29,15 +32,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-    redirect_to action: :index
-  end
-
   private
 
   def product_params
-    params.require(:product).permit(:description, :stock, :barcode, :price)
+    params.require(:product).permit(:description, :stock, :barcode, :price, :promotion_id)
+  end
+
+  def promotions
+    @promotions = Promotion.all
   end
 end
