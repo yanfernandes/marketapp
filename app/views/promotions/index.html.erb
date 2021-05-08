@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h1 class="text-center">Lista de promoções</h1>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Kind</th>
+        <th scope="col">Base</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @promotions.each do |promotion| %>
+        <tr>
+          <th scope="row"><%= promotion.id %></th>
+          <td><%= promotion.kind%></td>
+          <td><%= promotion.base %></td>
+          <td><%= promotion.value %></td>
+          <td>
+            <%= link_to 'Editar', edit_promotion_path(promotion) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Nova promoção', new_promotion_path, class:"btn btn-info" %>
+  <%= link_to 'Voltar', root_path, class:"btn btn-info" %>
+
+</div>

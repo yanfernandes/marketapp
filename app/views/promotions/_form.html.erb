@@ -1,0 +1,20 @@
+<%= form_with(model: @promotion, local: true) do |f| %>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <form>
+        <div class="form-group">
+          <%= f.text_field :kind, class: "form-control mb-4", placeholder: 'Kind', required: true %>
+          <%= f.text_field :base, class: "form-control mb-4", placeholder: 'Base', required: true %>
+          <%= f.text_field :value, class: "form-control mb-4", placeholder: 'Value', required: true %>
+        </div>
+        <div class="text-center">
+          <%= f.submit "Enviar", class: "btn btn-info" %>
+          <%= link_to 'Voltar', promotions_path, class:"btn btn-info" %>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% end %>
