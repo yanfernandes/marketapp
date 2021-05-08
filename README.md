@@ -20,7 +20,26 @@ Endpoint https://marketapp202105.herokuapp.com/api/v1/products/
 Criar pedido na API
 ```bash
 # Método HTTP POST
-Endpoint https://marketapp202105.herokuapp.com/api/v1/order/
+Endpoint https://marketapp202105.herokuapp.com/api/v1/orders/
+
+Exemplo:
+{
+	"order": {
+		"delivery_tax": "9",
+		"items_attributes": [
+			{ 
+				"product_id": 1,
+				"amount": "5"
+
+			},
+			{ 
+				"product_id": 2,
+				"amount": "11"
+
+			}
+		] 
+	}
+}
 ```
 
 Visualizar pedidos
