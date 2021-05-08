@@ -1,24 +1,29 @@
-# README
+## Marketapp
+Aplicação que cadastra produtos de supermercado, cria pedidos via API, retorna os dados, gera uma lista de pedidos e sua visualização.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Como utilizar
 
-Things you may want to cover:
+Home
+```bash
+https://marketapp202105.herokuapp.com/
+```
 
-* Ruby version
+Cadastrar produtos
+```bash
+https://marketapp202105.herokuapp.com/products
+```
+Visualizar produtos na API
+```bash
+# Método HTTP GET
+Endpoint https://marketapp202105.herokuapp.com/api/v1/products/
+```
+Criar pedido na API
+```bash
+# Método HTTP POST
+Endpoint https://marketapp202105.herokuapp.com/api/v1/order/
+```
 
-* System dependencies
+Visualizar pedidos
+```bash
+https://marketapp202105.herokuapp.com/orders
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
