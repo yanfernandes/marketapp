@@ -8,11 +8,12 @@
           <%= f.text_field :description, class: "form-control mb-4", placeholder: 'Descrição', required: true %>
           <%= f.text_field :stock, class: "form-control mb-4", placeholder: 'Estoque', required: true %>
           <%= f.text_field :barcode, class: "form-control mb-4", placeholder: 'Código de Barras', required: true %>
-          <%= f.select :promotion, ["Selecione uma promoção", "Pague 2, leve 3", "Pague 4, leve 5", "Pague 6, leve 7"], class: "form-select-lg mb-4" %>
-          <%= f.text_field :price, class: "form-control mb-4 mt-4", placeholder: 'Preço', required: true %>
+          <%= f.select :promotion_id, options_from_collection_for_select(@promotions, :id, :kind, @promotion), { include_blank: "Selecione uma promoção" }, class: "form-control form-select mb-4" %>
+          <%= f.text_field :price, class: "form-control mb-4", placeholder: 'Preço', required: true %>
         </div>
         <div class="text-center">
-          <%= f.submit "Enviar", class: "btn btn-primary" %>
+          <%= f.submit "Enviar", class: "btn btn-info" %>
+          <%= link_to 'Voltar', products_path, class:"btn btn-info" %>
         </div>
       </form>
     </div>
